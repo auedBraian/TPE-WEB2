@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-10-09 18:13:30
+/* Smarty version 3.1.34-dev-7, created on 2020-11-18 14:07:04
   from 'C:\xampp\htdocs\tpe-web2\templates\admin\login.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5f808c2a89a6b7_34471140',
+  'unifunc' => 'content_5fb51c78c47911_65730406',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0519d152339bde586595e41e3410efa10e759b1d' => 
     array (
       0 => 'C:\\xampp\\htdocs\\tpe-web2\\templates\\admin\\login.tpl',
-      1 => 1602259931,
+      1 => 1605704315,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../footer.tpl' => 1,
   ),
 ),false)) {
-function content_5f808c2a89a6b7_34471140 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fb51c78c47911_65730406 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:../header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <section class="contenedorProductos">
@@ -35,7 +35,11 @@ $_smarty_tpl->_subTemplateRender("file:../header.tpl", $_smarty_tpl->cache_id, $
                         <label class="formlabel" for="password">Password</label>
                         <input class="formlabel" type="password" name="input_pass" value="">
                         <button type="submit" name="agregar">Log In</button>
+                        
                 </form>
+                <form class="formularioRegistro" action="registrarUser" method="GET">
+                        <button type="submit" name="registrar">Sign In</button>
+                 </form>
         </article>           
            <aside> </aside>
 </section>         

@@ -374,10 +374,23 @@ form{
   font-size: medium;
   flex-direction: column;
   width: 40%;
-  margin: auto;
+  margin: 0px auto;
+  padding-bottom: 5px;
   border: 10px;
 }
 
+.formularioRegistro{
+  margin: 0px auto;
+  font-family:Verdana, Geneva, Tahoma, sans-serif ;
+  display: flex;
+  justify-content: space-evenly;
+  font-weight: bold;
+  font-size: medium;
+  flex-direction: column;
+  width: 40%;
+  padding-bottom: 5px;
+  border: 10px;
+}
 
 
 }

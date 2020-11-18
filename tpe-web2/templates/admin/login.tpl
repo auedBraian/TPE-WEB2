@@ -8,7 +8,11 @@
                         <label class="formlabel" for="password">Password</label>
                         <input class="formlabel" type="password" name="input_pass" value="">
                         <button type="submit" name="agregar">Log In</button>
+                        
                 </form>
+                <form class="formularioRegistro" action="registrarUser" method="GET">
+                        <button type="submit" name="registrar">Sign In</button>
+                 </form>
         </article>           
            <aside> </aside>
 </section>         

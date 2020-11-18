@@ -14,5 +14,22 @@ class userView{
        $smarty->assign('message', $message);
        $smarty->display('../templates/admin/login.tpl'); // muestro el template 
     }
+
+    function ShowRegistro($message=""){
+        $smarty = new Smarty();
+        $smarty->assign('titulo_s', $this->title);
+        $smarty->assign('message', $message);
+        $smarty->display('../templates/usuario/registroUsuario.tpl'); // muestro el template 
+     } 
+
+
+     function ShowErrorRegistro($message=""){
+        $smarty = new Smarty();
+        $smarty->assign('titulo_s', $this->title);
+        $smarty->assign('message', $message);
+        $smarty->display('../templates/usuario/registroUsuario.tpl'); // muestro el template 
+     }
 }
+
+
 ?>

@@ -4,6 +4,7 @@
     require_once 'Controller/productosController.php';
     require_once 'Controller/temporadaController.php';
     require_once 'Controller/userController.php';
+    require_once 'Controller/publicUserController.php';
     require_once 'routerClass.php';
     
     // CONSTANTES PARA RUTEO
@@ -19,6 +20,10 @@
     $r->addRoute("producto/:ID", "GET", "productosController", "ShowProducto");
     $r->addRoute("temporadas", "GET", "temporadaController", "ShowCatalogoTemp");
     $r->addRoute("temporada/:ID", "GET", "temporadaController", "ShowTemporada");
+    $r->addRoute("registrarUser","GET","publicUserController", "registroUsuario");
+    $r->addRoute("registrarUser","POST","publicUserController", "registrarUsuario");
+
+   
     
     //rutas privadas
     $r->addRoute("adminProductos", "GET", "productosController", "ShowTablaProductos");

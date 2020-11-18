@@ -64,5 +64,7 @@ class userController{
         }
         return $isLogged;
     }
+
 }
+
 ?>

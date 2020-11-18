@@ -14,5 +14,11 @@ class userModel {
         $sentencia->execute(array($user));
         return $sentencia->fetch(PDO::FETCH_OBJ);
     }
-}
 
+    function registrarUser($user,$password){
+       $sentencia = $this->db->prepare("INSERT INTO user(email, password) VALUES(?,?)");
+       $sentencia->execute(array($user,$password));
+       return $sentencia->fetch(PDO::FETCH_OBJ);
+     }
+    
+}
