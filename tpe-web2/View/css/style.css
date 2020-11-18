@@ -1,0 +1,386 @@
+  /* MOBILE FIRST*/
+ /* HTML INDEX*/
+ 
+header{
+  background-image: url("../images/logo.jpg");
+  background-repeat: no-repeat;
+  background-size: 105% 105%;
+  border: rgb(15, 12, 12) 5px solid;
+  margin:  5px  0; 
+  width: 100%;
+  height: 150px;
+}
+
+ 
+.btn_menu {
+ color: white;
+ padding: 5px; 
+ display: flex;
+ margin-left: auto;
+ margin-bottom: auto;
+}
+
+.btn_menu a{
+ color: black;
+ text-decoration: none;
+}
+
+nav {
+ width: 100%;
+ display: flex;
+ font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif, Geneva, Tahoma, sans-serif;
+}
+
+ul.navigation {
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  display: none;
+  flex-direction: column;
+}
+
+    /* si tiene tambien la clase show */
+ul.navigation.show {
+  display: flex;
+}
+
+ul.navigation li {
+  display: inline;
+  text-align: start;
+  list-style: none;
+  margin: 0 10px 0 0;
+  padding: 3px;
+  margin-left: auto;
+}
+
+ul.navigation li a {
+  text-decoration: none;
+  color: black;
+  background-color: rgb(202, 198, 198);
+  text-align: end;
+  margin-left: auto;
+}
+
+ul.navigation li:hover {
+  color:#fff;
+  background:rgb(1, 1, 15);
+  border:2px solid #06c;
+  text-decoration:underline;
+}
+
+section{
+  display: flex;
+  flex-direction: column;
+  height: 75%;
+  background-color: rgb(216, 195, 195);
+}
+
+.cuerpo{
+  width: 100%;
+  margin: 2px 2px ; 
+  height:75%;  
+}
+
+.lista-cuerpo{
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+
+h3{
+  font-family: verdana, georgia,sans-serif;
+  padding: 0px 0px 0px 3px;
+}
+    
+p{
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  text-align: justify;
+}
+
+ /*aca va el aside */
+aside{ 
+  display: flex;
+  width:100%;
+  height: 80px;
+  background-image: url("../images/publicidad-Responsive.jpg");
+  background-repeat: no-repeat;
+  background-size: 105% 105%;
+  border-color: black 5px solid;
+}
+
+footer{
+  background-color: rgb(190, 190, 190);
+  text-align: justify;
+  height: 5%;
+  width: auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 8px;
+  padding-right: 8px;
+  font: Arial, Helvetica, sans-serif;
+  font-weight:normal;
+  margin:  2px  0;
+}
+
+  /*HTML PRODUCTOS*/
+
+.contenedorProductos{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  flex-direction: column;
+  height: 75% ;
+  background-image: none;
+  background-color: white;
+}
+
+.contenido-productos{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+.contenedor-tabla{
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  justify-content: space-between;
+}
+        
+table{
+  margin-bottom: 20px;
+  text-align: left;
+  border: black;
+  border-collapse: collapse;
+  width: 100%;
+  background-color: white;
+}
+        
+td, th{
+  border: solid 1px black;
+  padding: 2px;
+}
+          
+thead{
+  background-color: rgb(196, 61, 61);
+  border-bottom: solid 2px;
+  color: white;
+}
+        
+tr:nth-child(even){
+  background-color: #ddd;
+}
+        
+.imagen{
+  display: flex;
+  justify-content: center;
+  width: 150px;
+  height: 150px;
+  margin-bottom: 40px;
+  margin-left: auto;
+  margin-right: auto;  
+}
+        
+        
+.aside-productos{ 
+  display: flex;
+  width:100%;
+  height: 80px;
+  background-image: url("../images/publicidad-Responsive.jpg");
+  background-repeat: no-repeat;
+  background-size: 105% 105%;
+  border-color: black 5px solid;
+}
+   
+   /* HTML Contactos */
+  
+.contenedorContactenos{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  flex-direction:column;
+  height: 75% ;
+  background-image: none;
+}
+
+.contenido-contactenos{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 80%;
+}
+
+.listaRedes{
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.imagen-redes{
+  width: 40px;
+  height: 40px;
+}
+
+.formulario-contacto{
+  padding: 0 0 0 10px;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+.check{
+  display: flex;
+  flex-direction: row;
+}
+
+.resultado-captcha{
+  color:red;
+}
+
+/*###################################################################################### */ 
+/* CSS Escritorio
+/* HTML INDEX */
+@media only screen and (min-width: 600px) {
+header{
+  height: 210px;
+}
+
+.btn_menu {
+   display: none;
+}
+
+nav{
+  margin-top: 13%;
+}
+
+.formlabel{
+  padding: 5px;
+  margin-bottom: 5px;
+}
+ 
+ul.navigation { 
+ padding-bottom: 16px;
+ display: flex;
+ flex-direction: row;
+ align-items: flex-end;
+ justify-content: flex-end;
+}
+
+ul.navigation li {
+  display: inline;
+  text-align: start;
+  list-style: none;
+  margin: 0 10px 0 0;
+  padding: 3px;
+}
+  
+nav li{
+  padding: 2px;
+}
+  
+nav a {
+  background:rgb(255, 255, 255);
+  border:2px solid #993;
+  padding:1em;
+  text-decoration:none;
+  border-radius: 15px;
+}
+  
+nav a:hover {
+  color:#fff;
+  border:2px solid #06c;
+  text-decoration:underline;
+}
+
+section{ 
+  justify-content: space-between;
+  background-image: url("../images/marcas10.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%; 
+  flex-direction: row;
+}
+
+.cuerpo{
+  width: 80%;
+  margin: 0px 2px 0px 0px; 
+}
+
+aside{ 
+  width: 20%;
+  height: 800px;
+  background-image: url("../images/marcas2.jpg");
+}
+
+ /* HTML PRODUCTOS */
+.contenedorProductos{
+  justify-content: space-between;
+  flex-direction: row;
+}
+ 
+.contenido-productos{ 
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 75%;
+  margin-right: 85px;
+}
+
+.contenedor-tabla{
+  width: 25%;
+}
+
+.imagen{
+  width: 250px;
+  height: 200px;
+}
+
+.botones{
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.aside-productos{ 
+  width: 20%;
+  height: 1400px;
+  background-image: url("../images/marcas2.jpg");
+}
+
+/* HTML Contactos */
+.contenedorContactenos{
+  flex-direction: row;
+}
+
+.contenido-contactenos{
+  flex-direction: row;
+}
+
+form{
+  display: flex;
+}
+
+.formularioLogin{
+  font-family:Verdana, Geneva, Tahoma, sans-serif ;
+  display: flex;
+  justify-content: space-evenly;
+  font-weight: bold;
+  font-size: medium;
+  flex-direction: column;
+  width: 40%;
+  margin: auto;
+  border: 10px;
+}
+
+
+
+}
+
+
+  
