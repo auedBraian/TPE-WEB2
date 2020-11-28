@@ -25,20 +25,14 @@ class ApiComentariosController extends ApiController {
         if($this->controller->isLogged() && $_SESSION["ADMIN"]==0){
             $id_usuario =  $_SESSION["ID"];
             if($body->comentario && $body->valoracion){
-                $idComentario = $this->model->InsertarComentario($body->comentario,$body->valoracion,$id_usuario,$body->id_producto);
-                $this->view->response("El comentario se ha insertado correctamente", 200);
-            }else{
-                $this->view->response("El comentario no se ha podido insertar", 404);
+                $result = $this->model->InsertarComentario($body->comentario,$body->valoracion,$id_usuario,$body->id_producto);
+                if($result > 0){
+                    $this->view->response("El comentario fue insertado", 200);
+                }else{
+                    $this->view->response("El comentario no se pudo insertar", 404);
+                }
             }
-                /*
-               // if (!empty($idComentario)) {
-                    $this->view->response($this->model->GetComentariosPorProducto($body->id_producto), 201);
-                
-            }else {
-                $comentarios = $this->model->GetComentariosPorProducto($body->id_producto);
-                $this->view->response($comentarios, 200);    
-            }}*/
-            }
+        }
     }   
     
     public function DeleteComentario($params = null) {

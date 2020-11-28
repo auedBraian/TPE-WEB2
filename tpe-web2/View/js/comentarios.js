@@ -1,9 +1,10 @@
 let comentarios = [];
 let container = document.getElementById("productos_tabla");
-let prodId= document.getElementById("productoId").value;
+let prodId= document.getElementById("productoId").value; 
 
 async function loadComentarios() {
-    try {                           
+    try {     
+                             
         let response = await fetch('api/comentarios/'+prodId); //cambiar el numero 7
        
         if (response.ok) {
@@ -24,6 +25,7 @@ async function loadComentarios() {
 
  
 function mostrarComentarios() {
+    container.innerHTML="";
     for (let i = 0; i < comentarios.length; i++) {
         let tdComentario = document.createElement('td');
         tdComentario.innerText = comentarios[i].comentario;
@@ -44,6 +46,7 @@ btninsertarComentario.addEventListener("click", insertarComentario);
 
 
 async function insertarComentario() {
+    event.preventDefault();
     let comentario = document.getElementById('comentario').value;
     let valoracion = document.getElementById('valoracion').value;
     let productoId= document.getElementById("productoId").value;
@@ -59,7 +62,7 @@ async function insertarComentario() {
         "body": JSON.stringify(body)
     })
     if (response.ok) {
-        mostrarComentarios();                     
+       loadComentarios();                     
     } else {
         console.log("Fallo el Post");
     }
