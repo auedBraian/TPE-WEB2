@@ -380,7 +380,10 @@ form{
 }
 
 .formularioRegistro{
-  margin: 0px auto;
+  margin-top: -300px;
+  margin-bottom: 0px;
+  margin-left: auto;
+  margin-right: auto;
   font-family:Verdana, Geneva, Tahoma, sans-serif ;
   display: flex;
   justify-content: space-evenly;

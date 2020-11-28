@@ -1,4 +1,4 @@
-{include file="../header.tpl"}
+{include file="header.tpl"}
         <section class="contenedorProductos">
             <article class="contenido-productos">
                     <table>
@@ -40,10 +40,10 @@
             </tbody>
 
           </table>
-        </form>
-        <h1>Insertar Comentario</h1>
-         <form action="comentarios" method="POST">
-             <textarea id="comentario" type="text" name="comentario" maxlength="255"></textarea>
+          </form>
+            <h1 style="display:none">Insertar Comentario</h1>
+         <form style="display:none" action="comentarios" method="POST">
+             <textarea id="comentario" type="text" name="comentario" maxlength="255">Escribe aquí tus comentarios</textarea>
                <select name="valoracion" id="valoracion"> 
                       <option value="1">1</option>
                       <option value="2" >2</option>
@@ -53,9 +53,9 @@
                   </select>
                 <button type="submit" name="agregar" id="btnInsertarComentario">InsertarComentario</button>
         </form>
+
             </article>           
  <aside> </aside> 
                
             </section> 
-            {include file="../footer.tpl"}
-            
+            {include file="footer.tpl"}

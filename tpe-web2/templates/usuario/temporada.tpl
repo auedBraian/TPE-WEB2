@@ -23,3 +23,4 @@
                       
  <aside> </aside> 
             </section>
+            {include file="../footer.tpl"}

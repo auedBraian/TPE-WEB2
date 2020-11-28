@@ -17,11 +17,11 @@ class TemporadaController{
     }
 
     function ShowTablaTemporadas(){
-        if($this->controller->isLogged()){
+        if($this->controller->isLogged() && $_SESSION["ADMIN"]==1){
             $temporadas = $this->model->getTemporadas();
             $this->view->ShowTemporadas($temporadas);
         }else{
-            $this->controller->Login();
+               header("Location: ".BASE_URL."Home");       
         }
     }
 
@@ -31,46 +31,46 @@ class TemporadaController{
     }
 
     public function insertarTemporada(){
-        if($this->controller->isLogged()){
+        if($this->controller->isLogged() && $_SESSION["ADMIN"]==1){
            $temporada = $_POST['temporada'];
             $this->model->insertarTemporada($temporada);
             $temporadas = $this->model->getTemporadas();
             $this->view->ShowTemporadas($temporadas);
         }else{
-            $this->controller->Login();
+            header("Location: ".BASE_URL."Home");
         }
     }
 
     public function eliminarTemporada($parametros = null){
-        if($this->controller->isLogged()){
+        if($this->controller->isLogged() && $_SESSION["ADMIN"]==1){
              $id = $parametros[':ID'];
             $this->model->eliminarTemporada($id);
             $temporadas = $this->model->getTemporadas();
             $this->view->ShowTemporadas($temporadas);      
         }else{
-            $this->controller->Login();
+            header("Location: ".BASE_URL."Home");
         }
     } 
 
     function ActualizarTemporada($parametros = null){
-        if($this->controller->isLogged()){
+        if($this->controller->isLogged() && $_SESSION["ADMIN"]==1){
             $id = $parametros[':ID'];
             $temporada = $this->model->getTemporada($id);
             $this->view->editarTemporada($temporada);
         }else{
-            $this->controller->Login();
+            header("Location: ".BASE_URL."Home");
         }
     }
 
     public function editarTemporada($parametros = null){
-        if($this->controller->isLogged()){
+        if($this->controller->isLogged() && $_SESSION["ADMIN"]==1){
             $id = $parametros[':ID'];
             $temporada = $_POST['temporada'];
             $this->model->editarTemporada($id,$temporada);
             $temporadas = $this->model->getTemporadas();
             $this->view->ShowTemporadas($temporadas);
         }else{
-            $this->controller->Login();
+            header("Location: ".BASE_URL."Home");
         }
     }
 
@@ -81,8 +81,12 @@ class TemporadaController{
     }
 
     function ShowTemporadaAdmin($parametros = null){
-        $id = $parametros[':ID'];
-        $temporada = $this->model->getTemporada($id);
-        $this->view->ShowTemporadaAdm($temporada);
-    }
+        if($this->controller->isLogged() && $_SESSION["ADMIN"]==1){
+            $id = $parametros[':ID'];
+            $temporada = $this->model->getTemporada($id);
+            $this->view->ShowTemporadaAdm($temporada);
+        }else{
+            header("Location: ".BASE_URL."Home");
+        }
+        }
 }

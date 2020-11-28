@@ -4,7 +4,7 @@
     require_once 'Controller/productosController.php';
     require_once 'Controller/temporadaController.php';
     require_once 'Controller/userController.php';
-    require_once 'Controller/publicUserController.php';
+    
     require_once 'routerClass.php';
     
     // CONSTANTES PARA RUTEO
@@ -20,8 +20,9 @@
     $r->addRoute("producto/:ID", "GET", "productosController", "ShowProducto");
     $r->addRoute("temporadas", "GET", "temporadaController", "ShowCatalogoTemp");
     $r->addRoute("temporada/:ID", "GET", "temporadaController", "ShowTemporada");
-    $r->addRoute("registrarUser","GET","publicUserController", "registroUsuario");
-    $r->addRoute("registrarUser","POST","publicUserController", "registrarUsuario");
+    $r->addRoute("registrarUser","GET","userController", "registroUsuario");
+    $r->addRoute("registrarUser","POST","userController", "registrarUsuario");
+    
 
    
     
@@ -30,10 +31,15 @@
     $r->addRoute("adminTemporadas", "GET", "temporadaController", "ShowTablatemporadas");
     $r->addRoute("login", "GET", "userController", "Login");
     $r->addRoute("logout", "GET", "userController", "logout");
-    $r->addRoute("verificarUser", "POST", "userController", "verifyUser");
+    $r->addRoute("verificarUsuario", "POST", "userController", "verificarUsuario");
     $r->addRoute("productoAdmin/:ID", "GET", "productosController", "ShowProductoAdmin");
     $r->addRoute("temporadaAdmin/:ID", "GET", "temporadaController", "ShowTemporadaAdmin");
-
+    $r->addRoute("verUsuarios", "GET", "userController","verUsuarios");
+    $r->addRoute("hacerAdmin/:ID", "GET", "userController", "convertirAdmin");
+    $r->addRoute("quitarAdmin/:ID", "GET", "userController", "quitarAdmin");
+    $r->addRoute("borrarUsuario/:ID", "GET", "userController", "borrarUsuario");
+    
+    
     //rutas para modificar productos
     $r->addRoute("insertarProducto", "POST", "productosController", "insertarProducto");
     $r->addRoute("editarProducto/:ID", "GET", "productosController", "ActualizarProducto");

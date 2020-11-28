@@ -9,6 +9,9 @@
             sujetas a cambios sin previo aviso.</p>
     </footer>
    
+        <script src="./View/js/comentarios.js"></script>
+
+
 </body>
 
 </html>

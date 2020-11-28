@@ -16,24 +16,23 @@ class ProductosController{
         $this->controller = new userController();
     }
 
+    //El usuario admin ve la tabla productos con la funcionalidad de editar, eliminar, etc.
      function ShowTablaProductos(){
-        if($this->controller->isLogged()){
-        $productos = $this->model->getInventario();
-        $this->view->ShowProductos($productos);
+        if($this->controller->isLogged() && $_SESSION["ADMIN"]==1){
+            $productos = $this->model->getInventario();
+            $this->view->ShowProductos($productos);
         }else{
-             $this->controller->Login();
-        }
-   }
+            header("Location: ".BASE_URL."Home");        }
+     }
 
+    //El usuario no registrado ve la tabla productos pero no puede editar ni nada
     function ShowCatalogo(){
         $productos = $this->model->getInventario(); 
         $this->view->ShowCatalogo($productos);
     }
-    
    
-   //REVISAR EN CLASE
     public function insertarProducto(){
-        if($this->controller->isLogged()){
+        if($this->controller->isLogged() && $_SESSION["ADMIN"]==1){
                 $producto= $_POST['producto'];
                 $precio = $_POST['precio'];
                 $marca = $_POST['marca'];
@@ -42,49 +41,55 @@ class ProductosController{
                 $productos = $this->model->getInventario();
                 $this->view->ShowProductos($productos);
         }else{
-            $this->controller->Login();
-       }
+            header("Location: ".BASE_URL."Home");       }
     }
 
     public function eliminarProducto($parametros = null){
-        if($this->controller->isLogged()){
+        if($this->controller->isLogged() && $_SESSION["ADMIN"]==1){
             $id = $parametros[':ID'];
-           $this->model->deleteProducto($id);
+            $this->model->deleteProducto($id);
             $productos = $this->model->getInventario();
             $this->view->ShowProductos($productos);
         }else{
-            $this->controller->Login();
-        }
+            header("Location: ".BASE_URL."Home");        }
     }
 
+   
+    //acomodar el else y el if
     function ShowProducto($parametros = null){
-        $id = $parametros[':ID'];
-        $productos = $this->model->getProducto($id);
-        $this->view->ShowProductoUnico($productos);
+        if($this->controller->isLogged() && $_SESSION["ADMIN"]==0){
+             $id = $parametros[':ID'];
+             $productos = $this->model->getProducto($id);
+             $this->view->ShowProductoUnico($productos); 
+        }else{
+             //El usuario no registrado ve el producto pero no puede editar ni nada
+             $id = $parametros[':ID'];
+             $productos = $this->model->getProducto($id);
+             $this->view->ShowProductoUnicoNoLogueado($productos); 
+        }
     }
 
     function ShowProductoAdmin($parametros = null){
-        if($this->controller->isLogged()){
+        if($this->controller->isLogged() && $_SESSION["ADMIN"]==1){
             $id = $parametros[':ID'];
             $productos = $this->model->getProducto($id);
             $this->view->ShowProductoAdm($productos);
+            //mostrar los comentarios, con la opcion de eliminarlos
         }else{
-            $this->controller->Login();
-        }
+            header("Location: ".BASE_URL."Home");        }
     }
 
     function ActualizarProducto($parametros = null){
-        if($this->controller->isLogged()){
+        if($this->controller->isLogged() && $_SESSION["ADMIN"]==1){
             $id = $parametros[':ID'];
             $productos = $this->model->getProducto($id);
             $this->view->editarProducto($productos);
         }else{
-            $this->controller->Login();
-        }
+            header("Location: ".BASE_URL."Home");        }
     }
 
     public function editarProducto($parametros = null){
-        if($this->controller->isLogged()){
+        if($this->controller->isLogged() && $_SESSION["ADMIN"]==1){
             $id = $parametros[':ID'];
             $producto= $_POST['producto'];
             $precio = $_POST['precio'];
@@ -94,8 +99,7 @@ class ProductosController{
             $productos = $this->model->getInventario();
             $this->view->ShowProductos($productos);
         }else{
-            $this->controller->Login();
-        }
+            header("Location: ".BASE_URL."Home");        }
     }
 
     public function filtrarTemporada(){
@@ -105,9 +109,13 @@ class ProductosController{
     }
     
     public function filtrarTemporadaAdmin(){
-        $temporada = $_POST['filtroTemporadaAdmin'];
-        $productos=$this->model->getProductosPorTemporada($temporada);
-        $this->view->ShowProductosFiltradosAdmin($productos);
+        if($this->controller->isLogged() && $_SESSION["ADMIN"]==1){
+            $temporada = $_POST['filtroTemporadaAdmin'];
+            $productos=$this->model->getProductosPorTemporada($temporada);
+            $this->view->ShowProductosFiltradosAdmin($productos);
+        }
+        else{
+            header("Location: ".BASE_URL."Home");        }
     }
 }
 

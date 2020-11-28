@@ -14,6 +14,7 @@
                     <tbody>
                    {foreach from=$productoAdmin_s item=producto}
                         <tr>
+                          <input id="prodId" type="hidden" value="{$producto->id}">
                           <td>{$producto->id}</td>
                           <td>{$producto->producto}</td>
                           <td>{$producto->precio}</td>
@@ -22,9 +23,31 @@
                         </tr>
                    {/foreach}
                     </table>
+
+              <form class="product_form" action="">
+              <table>
+              <thead>
+              <tr>
+                <th>Comentario </th>
+                <th>Puntaje</th>
+                <th>Usuario id</th>
+              </tr>
+             </thead>
+            <tbody id="productos_tabla">
+
+            </tbody>
+
+          </table>
+        </form>
+         
                   <form action="adminProductos" method="GET">
                 <button type="submit" name="adminProductos">Volver a Productos</button>
               </form>
-            </article>           
+        
+        <form action="verUsuarios" method="GET">
+        <button type="submit" name="verUsuarios">Ver Usuarios</button>
+        </form>
+                    </article>           
  <aside> </aside> 
             </section>
+  {include file="./adminFooter.tpl"}

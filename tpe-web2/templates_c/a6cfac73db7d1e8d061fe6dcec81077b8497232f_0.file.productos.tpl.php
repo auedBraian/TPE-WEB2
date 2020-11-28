@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-11-16 14:54:41
+/* Smarty version 3.1.34-dev-7, created on 2020-11-19 16:16:38
   from 'C:\xampp\htdocs\tpe-web2\templates\admin\productos.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5fb284a1ea3224_06090083',
+  'unifunc' => 'content_5fb68c56cb56d7_91433488',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a6cfac73db7d1e8d061fe6dcec81077b8497232f' => 
     array (
       0 => 'C:\\xampp\\htdocs\\tpe-web2\\templates\\admin\\productos.tpl',
-      1 => 1605534348,
+      1 => 1605798952,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../footer.tpl' => 1,
   ),
 ),false)) {
-function content_5fb284a1ea3224_06090083 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fb68c56cb56d7_91433488 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:./headerAdmin.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
  <section class="contenedorProductos">
@@ -93,6 +93,9 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 ?>   
      <form action="adminTemporadas" method="GET">
         <button type="submit" name="adminTemporadas">Ver temporadas</button>
+        </form>
+                        <form action="verUsuarios" method="GET">
+        <button type="submit" name="verUsuarios">Ver Usuarios</button>
         </form>
                   </div>
                </article>           

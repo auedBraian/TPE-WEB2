@@ -29,6 +29,15 @@ class userView{
         $smarty->assign('message', $message);
         $smarty->display('../templates/usuario/registroUsuario.tpl'); // muestro el template 
      }
+
+
+     function ShowUsers($usuarios){
+      $smarty = new Smarty();
+      $smarty->assign('titulo_s', $this->title);
+      $smarty->assign('users_s', $usuarios);
+      $smarty->display('../templates/admin/permisosAdmin.tpl'); // muestro el template 
+
+     }
 }
 
 

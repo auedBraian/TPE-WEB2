@@ -30,6 +30,9 @@
               <form action="adminProductos" method="GET">
                 <button type="submit" name="adminProductos">Ver Productos</button>
               </form>
+                <form action="verUsuarios" method="GET">
+        <button type="submit" name="verUsuarios">Ver Usuarios</button>
+        </form>
                   </div>
                </article>           
         <aside> </aside> 

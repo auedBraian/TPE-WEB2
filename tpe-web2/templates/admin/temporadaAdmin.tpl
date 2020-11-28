@@ -19,6 +19,9 @@
         <form action="adminTemporadas" method="GET">
         <button type="submit" name="adminTemporadas">Volver a tabla de Temporadas</button>
         </form>
+                        <form action="verUsuarios" method="GET">
+        <button type="submit" name="verUsuarios">Ver Usuarios</button>
+        </form>
             </article>    
         <aside> </aside> 
             </section>

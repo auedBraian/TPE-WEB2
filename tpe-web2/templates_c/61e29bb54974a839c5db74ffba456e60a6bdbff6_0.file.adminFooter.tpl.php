@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-11-24 19:36:11
-  from 'C:\xampp\htdocs\tpe-web2\templates\footer.tpl' */
+/* Smarty version 3.1.34-dev-7, created on 2020-11-25 00:29:23
+  from 'C:\xampp\htdocs\tpe-web2\templates\admin\adminFooter.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5fbd529b697264_11544218',
+  'unifunc' => 'content_5fbd97532a5410_13112498',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '4e5749bf3b3a613f7fec508e5f02491458877cd9' => 
+    '61e29bb54974a839c5db74ffba456e60a6bdbff6' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\tpe-web2\\templates\\footer.tpl',
-      1 => 1606242949,
+      0 => 'C:\\xampp\\htdocs\\tpe-web2\\templates\\admin\\adminFooter.tpl',
+      1 => 1606260555,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5fbd529b697264_11544218 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fbd97532a5410_13112498 (Smarty_Internal_Template $_smarty_tpl) {
 ?><footer>
         <p>Copyright © 2020 Acampando Ando. Domiciolio Legal: Costa Rica 456. Tandil, Buenos Aires. Cel: 0249 -
             154549328.
@@ -33,7 +33,7 @@ function content_5fbd529b697264_11544218 (Smarty_Internal_Template $_smarty_tpl)
     </footer>
    
         <?php echo '<script'; ?>
- src="./View/js/comentarios.js"><?php echo '</script'; ?>
+ src="././View/js/comentariosAdmin.js"><?php echo '</script'; ?>
 >
 
 

@@ -12,14 +12,6 @@ class AcampandoController{
         $this->view = new AcampandoView();
         $this->model = new AcampandoModel();
     }
-
-    private function checkLoggedIn(){
-        session_start();
-        if(!isset($_SESSION['EMAIL'])){
-           header("Location:". LOGIN);
-            die();
-        }
-    }
   
     function Home(){
         $this->view->ShowHome();
