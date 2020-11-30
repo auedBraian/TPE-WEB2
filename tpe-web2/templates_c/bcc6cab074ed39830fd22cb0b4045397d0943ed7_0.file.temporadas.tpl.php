@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-11-19 16:17:37
+/* Smarty version 3.1.34-dev-7, created on 2020-11-30 16:03:01
   from 'C:\xampp\htdocs\tpe-web2\templates\admin\temporadas.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5fb68c9191fac0_96404589',
+  'unifunc' => 'content_5fc509a56ef4a3_81253356',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'bcc6cab074ed39830fd22cb0b4045397d0943ed7' => 
     array (
       0 => 'C:\\xampp\\htdocs\\tpe-web2\\templates\\admin\\temporadas.tpl',
-      1 => 1605799035,
+      1 => 1606596842,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../footer.tpl' => 1,
   ),
 ),false)) {
-function content_5fb68c9191fac0_96404589 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fc509a56ef4a3_81253356 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:./headerAdmin.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
  <section class="contenedorProductos">

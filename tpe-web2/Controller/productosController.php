@@ -37,17 +37,21 @@ class ProductosController{
 
     public function insertarProducto(){
         if($this->controller->isLogged() && $_SESSION["ADMIN"]==1){
+            if(($_POST['producto'])!= null && ($_POST['precio'])!= null && ($_POST['marca'])!= null && ($_POST['temporada_id'])!= null){             
                 $producto= $_POST['producto'];
                 $precio = $_POST['precio'];
                 $marca = $_POST['marca'];
                 $temporada = $_POST['temporada_id'];
                 $this->model->insertarProducto($producto, $precio, $marca, $temporada);
-                $productos = $this->model->getInventario();
-                $this->view->ShowProductos($productos);
-        }else{
-            header("Location: ".BASE_URL."Home");       }
+                header("Location: ".BASE_URL."adminProductos");
+                }
+                 header("Location: ".BASE_URL."adminProductos");
+                }else{
+                     header("Location: ".BASE_URL."login");
+        }
     }
 
+    
     public function eliminarProducto($parametros = null){
         if($this->controller->isLogged() && $_SESSION["ADMIN"]==1){
             $id = $parametros[':ID'];
@@ -95,15 +99,20 @@ class ProductosController{
     public function editarProducto($parametros = null){
         if($this->controller->isLogged() && $_SESSION["ADMIN"]==1){
             $id = $parametros[':ID'];
-            $producto= $_POST['producto'];
-            $precio = $_POST['precio'];
-            $marca = $_POST['marca'];
-            $temporada = $_POST['temporada'];
-            $this->model->editarProducto($id,$producto,$precio,$marca,$temporada);
-            $productos = $this->model->getInventario();
-            $this->view->ShowProductos($productos);
-        }else{
-            header("Location: ".BASE_URL."Home");        }
+            if(($_POST['producto'])!= null && ($_POST['precio'])!= null && ($_POST['marca'])!= null && ($_POST['temporada'])!= null){             
+                $producto= $_POST['producto'];
+                $precio = $_POST['precio'];
+                $marca = $_POST['marca'];
+                $temporada = $_POST['temporada'];
+                $this->model->editarProducto($id,$producto,$precio,$marca,$temporada);
+                $productos = $this->model->getInventario();
+                $this->view->ShowProductos($productos);
+            }else{
+                 header("Location: ".BASE_URL."adminProductos");
+            }
+            }else{
+                 header("Location: ".BASE_URL."login");
+            }
     }
 
     public function filtrarTemporada(){
@@ -119,7 +128,8 @@ class ProductosController{
             $this->view->ShowProductosFiltradosAdmin($productos);
         }
         else{
-            header("Location: ".BASE_URL."Home");        }
+            header("Location: ".BASE_URL."logi");
+        }
     }
 }
 
