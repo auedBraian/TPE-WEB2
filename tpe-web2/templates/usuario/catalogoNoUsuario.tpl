@@ -1,4 +1,4 @@
-{include file="./headerUsuario.tpl"}
+{include file="../header.tpl"}
  <section class="contenedorProductos">
         <article class="contenido-productos">
           <img class="imagen" src="View/images/bolsaDeDormir.jpg" alt="bolsaDeDormir">
@@ -22,7 +22,7 @@
                         <td>{$producto->precio}</td>
                         <td>{$producto->marca}</td>
                         <td>{$producto->temporada}</td>
-                        <td> <a href="producto/{$producto->id}">Ver Mas </a></td>
+                        <td> <a href="producto/{$producto->id}" >Ver Mas </a></td>
                     </tr>
                 {/foreach}
         </body>
@@ -47,4 +47,4 @@
                </article>           
         <aside> </aside> 
             </section>          
-{include file="../footer.tpl"}                      
+{include file="../footer.tpl"}  

@@ -1,34 +1,34 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-11-24 20:16:00
+/* Smarty version 3.1.34-dev-7, created on 2020-11-29 00:47:23
   from 'C:\xampp\htdocs\tpe-web2\templates\usuario\catalogo.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5fbd5bf0eafed3_58395591',
+  'unifunc' => 'content_5fc2e18b7b9299_19146897',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e44f28673edd4597d107825c97eb9b52eba98174' => 
     array (
       0 => 'C:\\xampp\\htdocs\\tpe-web2\\templates\\usuario\\catalogo.tpl',
-      1 => 1606244522,
+      1 => 1606596842,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
-    'file:../header.tpl' => 1,
+    'file:./headerUsuario.tpl' => 1,
     'file:../footer.tpl' => 1,
   ),
 ),false)) {
-function content_5fbd5bf0eafed3_58395591 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->_subTemplateRender("file:../header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+function content_5fc2e18b7b9299_19146897 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_subTemplateRender("file:./headerUsuario.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
  <section class="contenedorProductos">
         <article class="contenido-productos">
           <img class="imagen" src="View/images/bolsaDeDormir.jpg" alt="bolsaDeDormir">
-               <form class="product_form"action="">
+               <form class="product_form" action="">
                     <table>
                        <thead>
                          <tr>
@@ -59,7 +59,7 @@ $_smarty_tpl->tpl_vars['producto']->do_else = false;
                         <td><?php echo $_smarty_tpl->tpl_vars['producto']->value->temporada;?>
 </td>
                         <td> <a href="producto/<?php echo $_smarty_tpl->tpl_vars['producto']->value->id;?>
-" >Ver Mas </a></td>
+">Ver Mas </a></td>
                     </tr>
                 <?php
 }

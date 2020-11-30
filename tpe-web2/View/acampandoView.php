@@ -15,6 +15,13 @@ class AcampandoView{
         $smarty->display('../templates/usuario/inicio.tpl'); // muestro el template 
     }
 
+
+    function ShowHomeLogueado(){
+        $smarty = new Smarty();
+        $smarty->assign('titulo_s', $this->title);
+        $smarty->display('../templates/usuario/inicioLogueado.tpl'); // muestro el template 
+    }
+
     function ShowHomeLocation(){
         header("Location: ".BASE_URL."home");
     }
@@ -31,6 +38,13 @@ class AcampandoView{
         $smarty->assign('titulo_s', $this->title);
         $smarty->assign('catalogo_s', $productos);
         $smarty->display('../templates/usuario/catalogo.tpl'); // muestro el template 
+    }
+
+    function ShowCatalogoNoUsuario($productos){
+        $smarty = new Smarty();
+        $smarty->assign('titulo_s', $this->title);
+        $smarty->assign('catalogo_s', $productos);
+        $smarty->display('../templates/usuario/catalogoNoUsuario.tpl'); // muestro el template
     }
 
     function ShowProductoUnico($id){

@@ -33,8 +33,14 @@ class userController{
         if(!empty($_POST["new_user"]) && !empty($_POST["new_pass"])){
             $userFromDB = $this->model->getUser($user);
             if(!$userFromDB){
-             $this->model->registrarUser($user, $pass, $admin);
-             header("Location: ".BASE_URL."home");  
+                $password_hash = password_hash($pass, PASSWORD_DEFAULT);
+                $this->model->registrarUser($user,$password_hash, $admin);
+                session_start();
+                $userFromDB = $this->model->getUser($user);
+                $_SESSION['EMAIL'] = $user;
+                $_SESSION["ID"] = $userFromDB->id;
+                $_SESSION["ADMIN"] = $admin;
+                header("Location: ".BASE_URL."productos");  
             }else{
                 $user = $_POST['new_user'];
                 $this->view->ShowErrorRegistro('El usuario ya se encuentra registrado');

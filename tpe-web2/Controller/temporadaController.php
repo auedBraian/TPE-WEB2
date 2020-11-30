@@ -27,7 +27,11 @@ class TemporadaController{
 
     function ShowCatalogoTemp(){
         $temporadas = $this->model->getTemporadas();
-        $this->view->ShowCatalogoTemporadas($temporadas);
+        if($this->controller->isLogged() && $_SESSION["ADMIN"]==0){ 
+            $this->view->ShowCatalogoTemporadas($temporadas);
+        }else{
+            $this->view->ShowCatalogoTemporadasNoUsuario($temporadas);
+        }
     }
 
     public function insertarTemporada(){
@@ -77,7 +81,12 @@ class TemporadaController{
     function ShowTemporada($parametros = null){
         $id = $parametros[':ID'];
         $temporada = $this->model->getTemporada($id);
-        $this->view->ShowTemporadaUnica($temporada);
+       // if($this->controller->isLogged() && $_SESSION["ADMIN"]==0){ 
+        if($this->controller->isLogged()){    
+            $this->view->ShowTemporadaUnica($temporada);
+        }else{
+            $this->view->ShowTemporadaUnicaNoUsuario($temporada);
+        }
     }
 
     function ShowTemporadaAdmin($parametros = null){

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-11-25 00:29:23
+/* Smarty version 3.1.34-dev-7, created on 2020-11-29 00:48:33
   from 'C:\xampp\htdocs\tpe-web2\templates\admin\adminFooter.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5fbd97532a5410_13112498',
+  'unifunc' => 'content_5fc2e1d1783010_60096068',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '61e29bb54974a839c5db74ffba456e60a6bdbff6' => 
     array (
       0 => 'C:\\xampp\\htdocs\\tpe-web2\\templates\\admin\\adminFooter.tpl',
-      1 => 1606260555,
+      1 => 1606596842,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5fbd97532a5410_13112498 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fc2e1d1783010_60096068 (Smarty_Internal_Template $_smarty_tpl) {
 ?><footer>
         <p>Copyright © 2020 Acampando Ando. Domiciolio Legal: Costa Rica 456. Tandil, Buenos Aires. Cel: 0249 -
             154549328.

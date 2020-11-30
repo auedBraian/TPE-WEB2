@@ -1,4 +1,4 @@
-{include file="./headerUsuario.tpl"}
+{include file="../header.tpl"}
         <section class="contenedorProductos">
             <article class="contenido-productos">
                     <table>

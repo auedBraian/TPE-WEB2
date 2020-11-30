@@ -11,11 +11,19 @@ class TemporadaView{
     }
 
     function ShowCatalogoTemporadas($temporadas){
-         $smarty = new Smarty();
+        $smarty = new Smarty();
         $smarty->assign('titulo_s', $this->title);
         $smarty->assign('catalogoTemp_s', $temporadas);
         $smarty->display('../templates/usuario/catalogoTemporadas.tpl'); // muestro el template 
     }
+
+
+    function ShowCatalogoTemporadasNoUsuario($temporadas){
+       $smarty = new Smarty();
+       $smarty->assign('titulo_s', $this->title);
+       $smarty->assign('catalogoTemp_s', $temporadas);
+       $smarty->display('../templates/usuario/catalogoTemporadasNoUsuario.tpl'); // muestro el template 
+   }
 
     function ShowTemporadas($temporadas){
         $smarty = new Smarty();
@@ -37,6 +45,13 @@ class TemporadaView{
         $smarty->assign('temporada_s', $id);
         $smarty->display('../templates/usuario/temporada.tpl'); // muestro el template 
 
+    }
+
+    function ShowTemporadaUnicaNoUsuario($id){
+        $smarty = new Smarty();
+        $smarty->assign('titulo_s', $this->title);
+        $smarty->assign('temporada_s', $id);
+        $smarty->display('../templates/usuario/temporadaNoUsuario.tpl');
     }
 
     function ShowTemporadaAdm($id){

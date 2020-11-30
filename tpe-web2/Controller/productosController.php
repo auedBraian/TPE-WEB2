@@ -28,9 +28,13 @@ class ProductosController{
     //El usuario no registrado ve la tabla productos pero no puede editar ni nada
     function ShowCatalogo(){
         $productos = $this->model->getInventario(); 
-        $this->view->ShowCatalogo($productos);
+        if($this->controller->isLogged() && $_SESSION["ADMIN"]==0){ 
+            $this->view->ShowCatalogo($productos);
+        }else{
+            $this->view->ShowCatalogoNoUsuario($productos);
+        }
     }
-   
+
     public function insertarProducto(){
         if($this->controller->isLogged() && $_SESSION["ADMIN"]==1){
                 $producto= $_POST['producto'];

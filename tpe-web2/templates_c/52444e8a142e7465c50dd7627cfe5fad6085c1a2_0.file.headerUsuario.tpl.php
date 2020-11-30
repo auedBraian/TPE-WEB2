@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-11-29 00:04:04
-  from 'C:\xampp\htdocs\tpe-web2\templates\header.tpl' */
+/* Smarty version 3.1.34-dev-7, created on 2020-11-28 19:34:26
+  from 'C:\xampp\htdocs\tpe-web2\templates\headerUsuario.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5fc2d764cb2cf1_13425299',
+  'unifunc' => 'content_5fc29832b78534_51442751',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '0a577e329ad824068ec9cf7da1844f6aee8195d5' => 
+    '52444e8a142e7465c50dd7627cfe5fad6085c1a2' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\tpe-web2\\templates\\header.tpl',
-      1 => 1606596842,
+      0 => 'C:\\xampp\\htdocs\\tpe-web2\\templates\\headerUsuario.tpl',
+      1 => 1606588455,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5fc2d764cb2cf1_13425299 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fc29832b78534_51442751 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,9 +39,8 @@ function content_5fc2d764cb2cf1_13425299 (Smarty_Internal_Template $_smarty_tpl)
                <li><a href="home">HOME</a></li>
                 <li><a href="productos"> PRODUCTOS </a></li>
                 <li><a href="temporadas">TEMPORADAS </a></li>
-                <li><a href="login">LOGIN</a></li>
+                <li><a href="logout">LOGOUT</a></li>
             </ul>
         </nav>
-    </header>
-<?php }
+    </header><?php }
 }

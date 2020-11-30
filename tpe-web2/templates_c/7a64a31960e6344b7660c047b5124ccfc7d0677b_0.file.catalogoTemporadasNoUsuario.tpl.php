@@ -1,29 +1,29 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-11-29 19:16:36
-  from 'C:\xampp\htdocs\tpe-web2\templates\usuario\catalogoTemporadas.tpl' */
+/* Smarty version 3.1.34-dev-7, created on 2020-11-29 00:51:02
+  from 'C:\xampp\htdocs\tpe-web2\templates\usuario\catalogoTemporadasNoUsuario.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5fc3e584454f65_48757398',
+  'unifunc' => 'content_5fc2e266ea3805_10912158',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '270f4df4cd319a917d09705c0fb30488b7cf6a68' => 
+    '7a64a31960e6344b7660c047b5124ccfc7d0677b' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\tpe-web2\\templates\\usuario\\catalogoTemporadas.tpl',
-      1 => 1606596842,
+      0 => 'C:\\xampp\\htdocs\\tpe-web2\\templates\\usuario\\catalogoTemporadasNoUsuario.tpl',
+      1 => 1606597900,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
-    'file:./headerUsuario.tpl' => 1,
+    'file:../header.tpl' => 1,
     'file:../footer.tpl' => 1,
   ),
 ),false)) {
-function content_5fc3e584454f65_48757398 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->_subTemplateRender("file:./headerUsuario.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+function content_5fc2e266ea3805_10912158 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_subTemplateRender("file:../header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
  <section class="contenedorProductos">
         <article class="contenido-productos">

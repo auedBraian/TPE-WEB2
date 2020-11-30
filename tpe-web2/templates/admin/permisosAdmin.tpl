@@ -15,14 +15,12 @@
                     <tbody>
                    {foreach from=$users_s item=user}
                         <tr>
-                         
                           <td>{$user->email}</td>
                           <td>{$user->password}</td>
                           <td>{$user->rol}</td>
                           <td> <a href="hacerAdmin/{$user->id}" > Hacer Admin </a></td>
                           <td> <a href="quitarAdmin/{$user->id}" >Quitar Admin </a></td>
                           <td> <a href="borrarUsuario/{$user->id}" >Borrar Usuario </a></td>
-
                         </tr>
                    {/foreach}
                     </table>
@@ -32,7 +30,6 @@
                  <form action="adminTemporadas" method="GET">
         <button type="submit" name="adminTemporadas">Volver a tabla de Temporadas</button>
         </form>
-
             </article>           
  <aside> </aside> 
             </section>

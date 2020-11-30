@@ -22,7 +22,7 @@
                         <td>{$producto->precio}</td>
                         <td>{$producto->marca}</td>
                         <td>{$producto->temporada}</td>
-                        <td><a href="producto/{$producto->id}" >Ver Mas</a></td>
+                        <td><a href="producto/{$producto->id}">Ver Mas</a></td>
                     </tr>
                 {/foreach}
                 
