@@ -32,7 +32,7 @@ class TemporadaView{
         $smarty->display('./templates/admin/temporadas.tpl'); // muestro el template 
     }
 
-    function editarTemporada($id){
+    function EditarTemporada($id){
         $smarty = new Smarty();
         $smarty->assign('titulo_s', $this->title);
         $smarty->assign('editTemporada_s', $id);

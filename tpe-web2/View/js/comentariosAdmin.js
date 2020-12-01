@@ -5,16 +5,16 @@ document.addEventListener('DOMContentLoaded', loadComentarios);
 let comentarios = [];
 let container = document.getElementById("productos_tabla");
 let prodID = document.getElementById("prodId").value;
-
+//le pide a la api que le traiga los comentarios para el producto con el id que tomo anteriormnete
 async function loadComentarios() {
     try {
         let response = await fetch('api/comentarios/' + prodID);
-        if (response.ok) {
+        if (response.ok) {//si la api responde correctamente, muestra los comentarios en pantalla
             let t = await response.json();
             comentarios = t;
             mostrarComentarios();
         }
-        else {
+        else {//si no hay comentarios, imprime un mensaje de que no hay comentarios para mostrar
             container.innerHTML = "No hay comentarios para mostrar";
         }
     }
@@ -22,7 +22,7 @@ async function loadComentarios() {
         container.innerHTML = "No hay comentarios para mostrar";
     };
 }
-
+ //toma los comentarios que vienen del back a traves de la api y los muestra en el front
 function mostrarComentarios() {
     console.log(comentarios);
     for (let i = 0; i < comentarios.length; i++) {
@@ -52,7 +52,7 @@ function mostrarComentarios() {
 
 async function eliminarComentario(id) {
     try {
-        let response = await fetch('api/comentarios/' + id, {  //cambiar el numero 7
+        let response = await fetch('api/comentarios/' + id, {  
             "method": "DELETE",
             "headers": {
                 "Content-Type": "application/json"

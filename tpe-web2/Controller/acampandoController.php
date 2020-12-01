@@ -13,9 +13,9 @@ class AcampandoController{
     function __construct(){
         $this->view = new AcampandoView();
         $this->model = new AcampandoModel();
-        $this->controller = new userController();
+        $this->controller = new UserController();
     }
-  
+    //Si esta logueado muestra el home con una barra de navegacion, sino lo muestra con otra
     function Home(){
         if($this->controller->isLogged()){
             $this->view->ShowHomeLogueado();
@@ -25,9 +25,6 @@ class AcampandoController{
         }
     }
 
-    function Contactenos(){
-        $this->view->ShowContactenos();
-    }
 }
 
 ?>

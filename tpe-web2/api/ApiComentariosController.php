@@ -11,15 +11,15 @@ class ApiComentariosController extends ApiController {
         $this->view = new APIView();
         $this->controller= new userController();
     }
-
-    public function GetComentariosPorProducto($params = null) {
+    //muestra los comentarios cuando se seleccciona un producto
+    public function VerComentariosPorProducto($params = null) {
         $id_producto = $params[':ID'];
-        $comentarios = $this->model->GetComentariosPorProducto($id_producto);
+        $comentarios = $this->model->VerComentariosPorProducto($id_producto);
         if (!empty($comentarios)) {
             $this->view->response($comentarios, 200);
         }
     }
-
+    //un usuario que no es administrador puede insertar un comentario
     public function InsertarComentario($params = null){
         $body = $this->getData();
         if($this->controller->isLogged() && $_SESSION["ADMIN"]==0){
@@ -34,8 +34,8 @@ class ApiComentariosController extends ApiController {
             }
         }
     }   
-    
-    public function DeleteComentario($params = null) {
+    //el usuario administrador puede borrar un comentario
+    public function BorrarComentario($params = null) {
         if($this->controller->isLogged() && $_SESSION["ADMIN"]==1){
             $id = $params[':ID'];
             $result =  $comentario = $this->model->BorrarComentario($id);

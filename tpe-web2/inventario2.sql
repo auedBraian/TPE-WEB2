@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 01-12-2020 a las 13:59:23
+-- Tiempo de generación: 01-12-2020 a las 19:28:42
 -- Versión del servidor: 10.4.14-MariaDB
 -- Versión de PHP: 7.4.10
 
@@ -40,28 +40,19 @@ CREATE TABLE `comentario` (
 --
 
 INSERT INTO `comentario` (`id_comentario`, `comentario`, `valoracion`, `id_usuario`, `id_producto`) VALUES
-(117, 'primer comentario de braian', 1, 24, 23),
-(118, 'segundo de braian', 1, 24, 23),
-(119, 'primero de marcelo', 3, 34, 23),
-(120, 'segundo de marcelo', 3, 34, 23),
-(125, 'comenta marce', 5, 34, 24),
-(126, 'comenta de nuevo marce', 3, 34, 24),
-(127, 'buena calidad, abriga mucho, recomendable 100 porciento', 5, 34, 25),
-(128, 'me arrepiento de haber comprado este producto', 2, 34, 25),
 (129, 'economica y de buena calidad', 4, 35, 25),
 (131, 'buen diseño y mejor precio', 3, 35, 26),
 (132, 'me hubiera gustado en otro color', 4, 35, 26),
 (133, 'es muy alto el precio para la calidad del producto', 4, 35, 27),
 (134, 'me gusto mucho este producto', 5, 35, 27),
 (135, 'Alumbra mucho y la bateria aguanta muchas horas', 5, 35, 18),
-(136, 'Precio calidad excelente', 3, 35, 18),
-(137, 'Este producto no se como funciona', 5, 35, 20),
-(138, 'Lo recomiendo 100 porciento', 5, 35, 20),
 (139, 'Comodo y confortable', 4, 35, 8),
 (140, 'Mala calidad', 1, 35, 8),
 (141, 'Liviana y abrigada', 4, 35, 14),
 (142, 'Liviana y abrigada', 4, 35, 14),
-(143, 'Liviana y abrigada', 2, 35, 14);
+(143, 'Liviana y abrigada', 2, 35, 14),
+(146, 'primer comentario para el producto inflador universal', 3, 35, 17),
+(147, 'primer comentario para el producto inflador universal', 4, 35, 17);
 
 -- --------------------------------------------------------
 
@@ -86,14 +77,14 @@ INSERT INTO `producto` (`id`, `producto`, `precio`, `marca`, `temporada_id`) VAL
 (14, 'Bolsa de dormir', 2000, 'Okey', 4),
 (17, 'Inflador universal', 300, 'Bestway', 4),
 (18, 'Lampara Led', 400, 'BichitoDeLuz', 3),
-(19, 'Mochila', 2147483647, 'Montagne', 9),
-(20, 'PruebaDeInsertar', 345435, 'PruebaDeMarca', 3),
-(22, 'portalampara', 45694444, 'luz', 9),
-(23, 'hola', 1111111, 'deeeeeeeeeeeeeeee', 9),
+(19, 'Mochila', 2147483647, 'Montagne', 3),
+(22, 'portalampara', 1, 'luzw', 9),
 (24, 'agrego edicion', 100, 'agregamosedicion', 2),
 (25, 'frazada', 300, 'Escape Outdorr', 2),
 (26, 'bolsa de dormir', 5000, 'Montagne', 2),
-(27, 'Carpa de alta montaña', 15000, 'Alphine Skate', 2);
+(27, 'Carpa de alta montaña', 15000, 'Alphine Skate', 2),
+(28, 'PruebaDeInsercion', 200, 'nose', 3),
+(29, 'microfono site', 400, 'eurocase', 9);
 
 -- --------------------------------------------------------
 
@@ -111,7 +102,7 @@ CREATE TABLE `temporada` (
 --
 
 INSERT INTO `temporada` (`id`, `temporada`) VALUES
-(2, 'Invierno'),
+(2, 'Invierno1'),
 (3, 'Otoño'),
 (4, 'Primavera'),
 (9, 'Verano');
@@ -136,7 +127,6 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`id`, `email`, `password`, `rol`) VALUES
 (1, 'kevin', '$2y$12$NkBw0BnaDgqqY/i4N7H1r..g1CeE15A/fZ1HAzUjaZRgRP1z7bm6e', 1),
 (24, 'braian', '$2y$12$5zwsCx9EcdwSXJ9bpRcP0eyDjqhT8Tlhi9kPoWqzKfkMSnKgjvxfq', 1),
-(34, 'marcelo', '$2y$10$59VxJo3Bf4nBbwitAtm7neOcHVbwurgZHqxpt/ytOubytCoRQ.UZa', 0),
 (35, 'alicia', '$2y$10$wGJdV7Unjko14LevcNUJK.IZS0IxYIbihPhSUa2DQZaz9V0E.TjN.', 0);
 
 --
@@ -178,13 +168,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT de la tabla `comentario`
 --
 ALTER TABLE `comentario`
-  MODIFY `id_comentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=144;
+  MODIFY `id_comentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=150;
 
 --
 -- AUTO_INCREMENT de la tabla `producto`
 --
 ALTER TABLE `producto`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT de la tabla `temporada`

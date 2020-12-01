@@ -4,7 +4,7 @@ require_once "./View/userView.php";
 require_once "./Model/userModel.php";
 require_once "./View/AcampandoView.php";
 
-class userController{
+class UserController{
 
     private $view;
     private $model;
@@ -20,23 +20,24 @@ class userController{
        $this->view->ShowLogin();
     }
 
-    function logout(){
+    function Logout(){
         session_start();
         session_destroy();
         header("Location: " . LOGIN);
     }
 
-    function registrarUsuario(){
+    //toma los datos del front y registra al usuario con rol 0 (no administrador)
+    function RegistrarUsuario(){
         $user = $_POST["new_user"];
         $pass = $_POST["new_pass"];
         $admin = 0;
         if(!empty($_POST["new_user"]) && !empty($_POST["new_pass"])){
-            $userFromDB = $this->model->getUser($user);
+            $userFromDB = $this->model->GetUser($user);
             if(!$userFromDB){
                 $password_hash = password_hash($pass, PASSWORD_DEFAULT);
-                $this->model->registrarUser($user,$password_hash, $admin);
+                $this->model->RegistrarUser($user,$password_hash, $admin);
                 session_start();
-                $userFromDB = $this->model->getUser($user);
+                $userFromDB = $this->model->GetUser($user);
                 $_SESSION['EMAIL'] = $user;
                 $_SESSION["ID"] = $userFromDB->id;
                 $_SESSION["ADMIN"] = $admin;
@@ -48,12 +49,12 @@ class userController{
             }//cierra el primer if
     }//cierra la funcion
 
-
-    function verificarUsuario(){
+//verifica si los datos ingresados son de un usuario registrado en el sitio
+    function VerificarUsuario(){
         $user = $_POST["input_user"];
         $pass = $_POST["input_pass"];
         if(isset($user)){
-        $userFromDB = $this->model->getUser($user);
+        $userFromDB = $this->model->GetUser($user);
         if(isset($userFromDB) && $userFromDB){
             $hash=$userFromDB->password;
             if(password_verify($pass, $hash)){
@@ -79,17 +80,17 @@ class userController{
             }
         }
     }
-
-    function verUsuarios(){
+    //el administrador puede ver los usuarios registrador
+    function VerUsuarios(){
         if($this->isLogged() && $_SESSION["ADMIN"]==1){
-             $usuarios = $this->model->getUsers();
+             $usuarios = $this->model->GetUsers();
              $this->view->ShowUsers($usuarios);
             }
             else{
                 $this->view2->ShowHome();
             }
     }
-
+    //chequea si hay una sesion iniciada
     function isLogged(){
         $isLogged = false;
         session_start();
@@ -99,43 +100,42 @@ class userController{
         return $isLogged;
     }
 
-    function registroUsuario(){
+    function RegistroUsuario(){
         $this->view->ShowRegistro();
     }
-
-    function convertirAdmin($params = null){
+    //un usuario administrador puede cambiar el rol de un usuario comun a usuario admin
+    function ConvertirAdmin($params = null){
         //Verifica si esta logueado y si tiene rol de admin
         if($this->isLogged() && $_SESSION["ADMIN"]==1){
             $id_usuario = $params[':ID'];
-            $this->model->convertirAdmin($id_usuario);
+            $this->model->ConvertirAdmin($id_usuario);
             //Vuelve a pedir el listado de usuarios actualizado y lo muestra en la vista
-            $usuarios=$this->model->getUsers();
+            $usuarios=$this->model->GetUsers();
             $this->view->ShowUsers($usuarios);    
     }else{
         header("Location: ".BASE_URL."home");  
         }
     }
-
-    function quitarAdmin($params = null){
+    //un usuario administrador puede quitarle las funciones de administrador a otro usuario administrador
+    function QuitarAdmin($params = null){
         if($this->isLogged() && $_SESSION["ADMIN"]==1){
               $id_usuario = $params[':ID'];
-              $this->model->quitarAdmin($id_usuario);
+              $this->model->QuitarAdmin($id_usuario);
               //Vuelve a pedir el listado de usuarios actualizado y lo muestra en la vista
-              $usuarios=$this->model->getUsers();
+              $usuarios=$this->model->GetUsers();
               $this->view->ShowUsers($usuarios);
         }else{
               header("Location: ".BASE_URL."home"); //cambiar el redireccionamiento
         }
     }
-
-    function borrarUsuario($params = null){
+    //un usuario administrador puede borrar un usuario
+    function BorrarUsuario($params = null){
         if($this->isLogged() && $_SESSION["ADMIN"]==1){
             $id_usuario = $params[':ID'];
-            $this->model->eliminarUsuario($id_usuario);
+            $this->model->EliminarUsuario($id_usuario);
             //Vuelve a pedir el listado de usuarios actualizado y lo muestra en la vista
-            $usuarios=$this->model->getUsers();
+            $usuarios=$this->model->GetUsers();
             $this->view->ShowUsers($usuarios);
-      //voy al model de comentarios y elimino los mensajes de ese usuario
         }else{
             header("Location: ".BASE_URL."home"); //cambiar el redireccionamiento
         }

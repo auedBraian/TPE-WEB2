@@ -3,16 +3,15 @@
 class ComentariosModel{
 
     private $db;
-
     function __construct(){
         $this->db = new PDO('mysql:host=localhost;'.'dbname=inventario2;charset=utf8', 'root', '');
     }
          
-      function GetComentariosPorProducto($id_producto){
+    function VerComentariosPorProducto($id_producto){
         $sentencia=$this->db->prepare("SELECT comentario.*, user.email FROM comentario INNER JOIN user ON comentario.id_usuario = user.id WHERE id_producto=?");
         $sentencia->execute(array($id_producto));
         return $sentencia->fetchAll(PDO::FETCH_OBJ);
-      }
+    }
 
       function GetComentarioPorId($id_comentario){
         $sentencia=$this->db->prepare("SELECT * FROM comentario WHERE id_comentario=?");

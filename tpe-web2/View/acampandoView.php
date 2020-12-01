@@ -52,7 +52,6 @@ class AcampandoView{
         $smarty->assign('titulo_s', $this->title);
         $smarty->assign('producto_s', $id);
         $smarty->display('../templates/usuario/producto.tpl'); // muestro el template 
-
     }
 
     function ShowProductoUnicoNoLogueado($producto){
@@ -67,10 +66,9 @@ class AcampandoView{
         $smarty->assign('titulo_s', $this->title);
         $smarty->assign('productoAdmin_s', $id);
         $smarty->display('../templates/admin/productoAdmin.tpl'); // muestro el template 
-
     }
 
-    function editarProducto($id){
+    function EditarProducto($id){
         $smarty = new Smarty();
         $smarty->assign('titulo_s', $this->title);
         $smarty->assign('edit_s', $id);

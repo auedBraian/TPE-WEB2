@@ -15,48 +15,43 @@
     $r = new Router();
 
     // rutas publicas
-    $r->addRoute("home", "GET", "acampandoController", "Home");
-    $r->addRoute("productos", "GET", "productosController", "ShowCatalogo");
-    $r->addRoute("producto/:ID", "GET", "productosController", "ShowProducto");
-    $r->addRoute("temporadas", "GET", "temporadaController", "ShowCatalogoTemp");
-    $r->addRoute("temporada/:ID", "GET", "temporadaController", "ShowTemporada");
-    $r->addRoute("registrarUser","GET","userController", "registroUsuario");
-    $r->addRoute("registrarUser","POST","userController", "registrarUsuario");
-    
-
-   
+    $r->addRoute("home", "GET", "AcampandoController", "Home");
+    $r->addRoute("productos", "GET", "ProductosController", "ShowCatalogo");
+    $r->addRoute("producto/:ID", "GET", "ProductosController", "ShowProducto");
+    $r->addRoute("temporadas", "GET", "TemporadaController", "ShowCatalogoTemp");
+    $r->addRoute("temporada/:ID", "GET", "TemporadaController", "ShowTemporada");
+    $r->addRoute("registrarUser","GET","UserController", "RegistroUsuario");
+    $r->addRoute("registrarUser","POST","UserController", "RegistrarUsuario");
     
     //rutas privadas
-    $r->addRoute("adminProductos", "GET", "productosController", "ShowTablaProductos");
-    $r->addRoute("adminTemporadas", "GET", "temporadaController", "ShowTablatemporadas");
-    $r->addRoute("login", "GET", "userController", "Login");
-    $r->addRoute("logout", "GET", "userController", "logout");
-    $r->addRoute("verificarUsuario", "POST", "userController", "verificarUsuario");
-    $r->addRoute("productoAdmin/:ID", "GET", "productosController", "ShowProductoAdmin");
-    $r->addRoute("temporadaAdmin/:ID", "GET", "temporadaController", "ShowTemporadaAdmin");
-    $r->addRoute("verUsuarios", "GET", "userController","verUsuarios");
-    $r->addRoute("hacerAdmin/:ID", "GET", "userController", "convertirAdmin");
-    $r->addRoute("quitarAdmin/:ID", "GET", "userController", "quitarAdmin");
-    $r->addRoute("borrarUsuario/:ID", "GET", "userController", "borrarUsuario");
-    
+    $r->addRoute("adminProductos", "GET", "ProductosController", "ShowTablaProductos");
+    $r->addRoute("adminTemporadas", "GET", "TemporadaController", "ShowTablatemporadas");
+    $r->addRoute("login", "GET", "UserController", "Login");
+    $r->addRoute("logout", "GET", "UserController", "Logout");
+    $r->addRoute("verificarUsuario", "POST", "UserController", "VerificarUsuario");
+    $r->addRoute("productoAdmin/:ID", "GET", "ProductosController", "ShowProductoAdmin");
+    $r->addRoute("temporadaAdmin/:ID", "GET", "TemporadaController", "ShowTemporadaAdmin");
+    $r->addRoute("verUsuarios", "GET", "UserController","VerUsuarios");
+    $r->addRoute("hacerAdmin/:ID", "GET", "UserController", "ConvertirAdmin");
+    $r->addRoute("quitarAdmin/:ID", "GET", "UserController", "QuitarAdmin");
+    $r->addRoute("borrarUsuario/:ID", "GET", "UserController", "BorrarUsuario");
     
     //rutas para modificar productos
-    $r->addRoute("insertarProducto", "POST", "productosController", "insertarProducto");
-    $r->addRoute("editarProducto/:ID", "GET", "productosController", "ActualizarProducto");
-    $r->addRoute("editarProducto/:ID", "POST", "productosController", "editarProducto");
-    $r->addRoute("eliminarProducto/:ID", "GET", "productosController", "eliminarProducto");
+    $r->addRoute("insertarProducto", "POST", "ProductosController", "InsertarProducto");
+    $r->addRoute("editarProducto/:ID", "GET", "ProductosController", "ActualizarProducto");
+    $r->addRoute("editarProducto/:ID", "POST", "ProductosController", "EditarProducto");
+    $r->addRoute("eliminarProducto/:ID", "GET", "ProductosController", "EliminarProducto");
     
-
     //rutas para modificar temporadas
-    $r->addRoute("insertarTemporada", "POST", "temporadaController", "insertarTemporada");
-    $r->addRoute("borrarTemporada/:ID", "GET", "temporadaController", "eliminarTemporada");
-    $r->addRoute("editarTemporada/:ID", "GET", "temporadaController", "ActualizarTemporada");
-    $r->addRoute("editarTemporada/:ID", "POST", "temporadaController", "editarTemporada");
-    $r->addRoute("filtroTemporada", "POST", "productosController", "filtrarTemporada");
-    $r->addRoute("filtroTemporadaAdmin", "POST", "productosController", "filtrarTemporadaAdmin");
+    $r->addRoute("insertarTemporada", "POST", "TemporadaController", "InsertarTemporada");
+    $r->addRoute("borrarTemporada/:ID", "GET", "TemporadaController", "EliminarTemporada");
+    $r->addRoute("editarTemporada/:ID", "GET", "TemporadaController", "ActualizarTemporada");
+    $r->addRoute("editarTemporada/:ID", "POST", "TemporadaController", "EditarTemporada");
+    $r->addRoute("filtroTemporada", "POST", "ProductosController", "FiltrarTemporada");
+    $r->addRoute("filtroTemporadaAdmin", "POST", "ProductosController", "FiltrarTemporadaAdmin");
 
     //Ruta por defecto.
-    $r->setDefaultRoute("acampandoController", "Home");
+    $r->setDefaultRoute("AcampandoController", "Home");
   
     //run
     $r->route($_GET['action'], $_SERVER['REQUEST_METHOD']); 
