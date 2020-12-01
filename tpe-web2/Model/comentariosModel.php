@@ -9,7 +9,7 @@ class ComentariosModel{
     }
          
       function GetComentariosPorProducto($id_producto){
-        $sentencia=$this->db->prepare("SELECT * FROM comentario WHERE id_producto=?");
+        $sentencia=$this->db->prepare("SELECT comentario.*, user.email FROM comentario INNER JOIN user ON comentario.id_usuario = user.id WHERE id_producto=?");
         $sentencia->execute(array($id_producto));
         return $sentencia->fetchAll(PDO::FETCH_OBJ);
       }
@@ -31,7 +31,6 @@ class ComentariosModel{
         $sentencia->execute(array($id_comentario));
         return $sentencia->rowCount();
     }
-      
 }
 
 ?>

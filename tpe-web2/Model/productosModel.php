@@ -31,7 +31,7 @@ class AcampandoModel{
     }
 
     function getProducto($id){
-        $query = $this->db->prepare("SELECT * FROM producto  WHERE id=?");
+        $query = $this->db->prepare("SELECT producto.*,temporada.temporada FROM producto INNER JOIN temporada ON producto.temporada_id = temporada.id WHERE producto.id=?");
         $query->execute(array($id));
         return $query->fetchAll(PDO::FETCH_OBJ);
     }

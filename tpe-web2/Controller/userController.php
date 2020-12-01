@@ -16,11 +16,11 @@ class userController{
         $this->view2= new AcampandoView();
     }
 
-   function Login(){
+    function Login(){
        $this->view->ShowLogin();
-   }
+    }
 
-   function logout(){
+    function logout(){
         session_start();
         session_destroy();
         header("Location: " . LOGIN);
@@ -49,7 +49,7 @@ class userController{
     }//cierra la funcion
 
 
-   function verificarUsuario(){
+    function verificarUsuario(){
         $user = $_POST["input_user"];
         $pass = $_POST["input_pass"];
         if(isset($user)){
@@ -99,7 +99,6 @@ class userController{
         return $isLogged;
     }
 
-
     function registroUsuario(){
         $this->view->ShowRegistro();
     }
@@ -136,10 +135,10 @@ class userController{
             //Vuelve a pedir el listado de usuarios actualizado y lo muestra en la vista
             $usuarios=$this->model->getUsers();
             $this->view->ShowUsers($usuarios);
+      //voy al model de comentarios y elimino los mensajes de ese usuario
         }else{
             header("Location: ".BASE_URL."home"); //cambiar el redireccionamiento
         }
     }
-
 }
 ?>

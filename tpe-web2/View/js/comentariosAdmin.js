@@ -23,8 +23,6 @@ async function loadComentarios() {
     };
 }
 
-
-//puede esperar un poquito 
 function mostrarComentarios() {
     console.log(comentarios);
     for (let i = 0; i < comentarios.length; i++) {
@@ -33,7 +31,7 @@ function mostrarComentarios() {
         let tdValoracion = document.createElement('td');
         tdValoracion.innerText = comentarios[i].valoracion;
         let tdUsuario = document.createElement('td');
-        tdUsuario.innerText = comentarios[i].id_usuario;
+        tdUsuario.innerText = comentarios[i].email;
         let tr = document.createElement('tr');
         container.appendChild(tr);
         // creo el boton de eliminar comentario

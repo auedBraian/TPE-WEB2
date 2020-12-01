@@ -55,10 +55,10 @@ class AcampandoView{
 
     }
 
-    function ShowProductoUnicoNoLogueado($id){
+    function ShowProductoUnicoNoLogueado($producto){
         $smarty = new Smarty();
         $smarty->assign('titulo_s', $this->title);
-        $smarty->assign('producto_s', $id);
+        $smarty->assign('producto_s', $producto);
         $smarty->display('../templates/usuarioNoRegistrado.tpl'); // muestro el template 
     }
 

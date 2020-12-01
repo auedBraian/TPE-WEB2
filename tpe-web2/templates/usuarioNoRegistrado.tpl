@@ -15,11 +15,11 @@
                    {foreach from=$producto_s item=producto}
                         <tr>
                         <input id="productoId" type="hidden" value="{$producto->id}">
-                        <td>{$producto->id}</td>
+                          <td>{$producto->id}</td>
                           <td>{$producto->producto}</td>
                           <td>{$producto->precio}</td>
                           <td>{$producto->marca}</td>
-                          <td>{$producto->temporada_id}</td>
+                          <td>{$producto->temporada}</td>
                         </tr>
                    {/foreach}
                     </table>
@@ -32,7 +32,7 @@
               <tr>
                 <th>Comentario </th>
                 <th>Puntaje</th>
-                <th>Usuario id</th>
+                <th>Usuario Email</th>
               </tr>
              </thead>
             <tbody id="productos_tabla">

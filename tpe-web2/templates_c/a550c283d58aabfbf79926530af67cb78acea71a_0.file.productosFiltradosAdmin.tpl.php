@@ -1,34 +1,34 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-11-30 19:59:57
-  from 'C:\xampp\htdocs\tpe-web2\templates\usuario\catalogo.tpl' */
+/* Smarty version 3.1.34-dev-7, created on 2020-11-30 20:10:52
+  from 'C:\xampp\htdocs\tpe-web2\templates\admin\productosFiltradosAdmin.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5fc5412dd333a0_10128560',
+  'unifunc' => 'content_5fc543bc12ce53_42318291',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    'e44f28673edd4597d107825c97eb9b52eba98174' => 
+    'a550c283d58aabfbf79926530af67cb78acea71a' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\tpe-web2\\templates\\usuario\\catalogo.tpl',
-      1 => 1606762779,
+      0 => 'C:\\xampp\\htdocs\\tpe-web2\\templates\\admin\\productosFiltradosAdmin.tpl',
+      1 => 1606596842,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
-    'file:./headerUsuario.tpl' => 1,
+    'file:./headerAdmin.tpl' => 1,
     'file:../footer.tpl' => 1,
   ),
 ),false)) {
-function content_5fc5412dd333a0_10128560 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->_subTemplateRender("file:./headerUsuario.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+function content_5fc543bc12ce53_42318291 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_subTemplateRender("file:./headerAdmin.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
  <section class="contenedorProductos">
         <article class="contenido-productos">
           <img class="imagen" src="View/images/bolsaDeDormir.jpg" alt="bolsaDeDormir">
-               <form class="product_form" action="">
+               <form class="product_form"action="">
                     <table>
                        <thead>
                          <tr>
@@ -37,12 +37,14 @@ $_smarty_tpl->_subTemplateRender("file:./headerUsuario.tpl", $_smarty_tpl->cache
                            <th>Precio</th>
                            <th>Marca</th>
                            <th>Temporada</th>
+                           <th>Borrar</th>
+                           <th>Editar</th>
                            <th>Ver mas</th>
                          </tr>
                        </thead>
                         <tbody>
                    <?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['catalogo_s']->value, 'producto');
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['productosFiltradosAdmin_s']->value, 'producto');
 $_smarty_tpl->tpl_vars['producto']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['producto']->value) {
 $_smarty_tpl->tpl_vars['producto']->do_else = false;
@@ -58,8 +60,12 @@ $_smarty_tpl->tpl_vars['producto']->do_else = false;
 </td>
                         <td><?php echo $_smarty_tpl->tpl_vars['producto']->value->temporada;?>
 </td>
+                        <td> <a href="eliminarProducto/<?php echo $_smarty_tpl->tpl_vars['producto']->value->id;?>
+" >Borrar </a></td>
+                        <td> <a href="editarProducto/<?php echo $_smarty_tpl->tpl_vars['producto']->value->id;?>
+" >Editar </a></td>
                         <td> <a href="producto/<?php echo $_smarty_tpl->tpl_vars['producto']->value->id;?>
-">Ver Mas </a></td>
+" >Ver Mas </a></td>
                     </tr>
                 <?php
 }
@@ -79,13 +85,22 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                       <button id=filter>Filtrar</button>
                </div>
             </form>
-                 <form action="temporadas" method="GET">
-        <button type="submit" name="temporadas">Ver temporadas</button>
+
+            <form action="adminProductos" method="GET">
+                <button type="submit" name="adminProductos">Ver Productos</button>
+              </form>
+
+     <form action="adminTemporadas" method="GET">
+        <button type="submit" name="adminTemporadas">Ver temporadas</button>
+        </form>
+                        <form action="verUsuarios" method="GET">
+        <button type="submit" name="verUsuarios">Ver Usuarios</button>
         </form>
                   </div>
                </article>           
         <aside> </aside> 
+            
             </section>          
-<?php $_smarty_tpl->_subTemplateRender("file:../footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
-?>                      <?php }
+    <?php $_smarty_tpl->_subTemplateRender("file:../footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+}
 }

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-11-29 00:47:32
+/* Smarty version 3.1.34-dev-7, created on 2020-12-01 13:25:07
   from 'C:\xampp\htdocs\tpe-web2\templates\usuario\producto.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5fc2e1946f7be3_74476867',
+  'unifunc' => 'content_5fc63623ab4ee8_88398073',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '463d280f91addf71c8c0a11cfd2d1d73325b0cbe' => 
     array (
       0 => 'C:\\xampp\\htdocs\\tpe-web2\\templates\\usuario\\producto.tpl',
-      1 => 1606596842,
+      1 => 1606825504,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../footer.tpl' => 1,
   ),
 ),false)) {
-function content_5fc2e1946f7be3_74476867 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fc63623ab4ee8_88398073 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:./headerUsuario.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
         <section class="contenedorProductos">
@@ -55,7 +55,7 @@ $_smarty_tpl->tpl_vars['producto']->do_else = false;
 </td>
                           <td><?php echo $_smarty_tpl->tpl_vars['producto']->value->marca;?>
 </td>
-                          <td><?php echo $_smarty_tpl->tpl_vars['producto']->value->temporada_id;?>
+                          <td><?php echo $_smarty_tpl->tpl_vars['producto']->value->temporada;?>
 </td>
                         </tr>
                    <?php
@@ -70,8 +70,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
             <thead>
               <tr>
                 <th>Comentario </th>
-                <th>Puntaje</th>
-                <th>Usuario id</th>
+                <th>Valoracion</th>
+                <th>Usuario Email</th>
               </tr>
              </thead>
             <tbody id="productos_tabla">
@@ -80,7 +80,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 
           </table>
         </form>
-        <h1>Insertar Comentario</h1>
+        <h1>Insertar Comentario y Valoracion</h1>
          <form action="comentarios" method="POST">
              <textarea id="comentario" type="text" name="comentario" maxlength="255"></textarea>
                <select name="valoracion" id="valoracion"> 

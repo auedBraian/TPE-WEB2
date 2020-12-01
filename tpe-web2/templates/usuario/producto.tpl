@@ -19,7 +19,7 @@
                           <td>{$producto->producto}</td>
                           <td>{$producto->precio}</td>
                           <td>{$producto->marca}</td>
-                          <td>{$producto->temporada_id}</td>
+                          <td>{$producto->temporada}</td>
                         </tr>
                    {/foreach}
                     </table>
@@ -31,8 +31,8 @@
             <thead>
               <tr>
                 <th>Comentario </th>
-                <th>Puntaje</th>
-                <th>Usuario id</th>
+                <th>Valoracion</th>
+                <th>Usuario Email</th>
               </tr>
              </thead>
             <tbody id="productos_tabla">
@@ -41,7 +41,7 @@
 
           </table>
         </form>
-        <h1>Insertar Comentario</h1>
+        <h1>Insertar Comentario y Valoracion</h1>
          <form action="comentarios" method="POST">
              <textarea id="comentario" type="text" name="comentario" maxlength="255"></textarea>
                <select name="valoracion" id="valoracion"> 

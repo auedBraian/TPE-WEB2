@@ -65,15 +65,14 @@ class ProductosController{
    
     //acomodar el else y el if
     function ShowProducto($parametros = null){
+        $id = $parametros[':ID'];
         if($this->controller->isLogged() && $_SESSION["ADMIN"]==0){
-             $id = $parametros[':ID'];
              $productos = $this->model->getProducto($id);
              $this->view->ShowProductoUnico($productos); 
         }else{
              //El usuario no registrado ve el producto pero no puede editar ni nada
-             $id = $parametros[':ID'];
-             $productos = $this->model->getProducto($id);
-             $this->view->ShowProductoUnicoNoLogueado($productos); 
+             $producto = $this->model->getProducto($id);
+             $this->view->ShowProductoUnicoNoLogueado($producto); 
         }
     }
 

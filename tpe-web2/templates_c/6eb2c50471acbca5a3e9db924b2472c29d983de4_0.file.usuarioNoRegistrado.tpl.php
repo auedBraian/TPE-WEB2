@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-11-29 00:45:06
+/* Smarty version 3.1.34-dev-7, created on 2020-12-01 03:38:08
   from 'C:\xampp\htdocs\tpe-web2\templates\usuarioNoRegistrado.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5fc2e102a90399_75036153',
+  'unifunc' => 'content_5fc5ac90cb9284_89000141',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6eb2c50471acbca5a3e9db924b2472c29d983de4' => 
     array (
       0 => 'C:\\xampp\\htdocs\\tpe-web2\\templates\\usuarioNoRegistrado.tpl',
-      1 => 1606596842,
+      1 => 1606790278,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5fc2e102a90399_75036153 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5fc5ac90cb9284_89000141 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
         <section class="contenedorProductos">
@@ -47,7 +47,7 @@ $_smarty_tpl->tpl_vars['producto']->do_else = false;
                         <tr>
                         <input id="productoId" type="hidden" value="<?php echo $_smarty_tpl->tpl_vars['producto']->value->id;?>
 ">
-                        <td><?php echo $_smarty_tpl->tpl_vars['producto']->value->id;?>
+                          <td><?php echo $_smarty_tpl->tpl_vars['producto']->value->id;?>
 </td>
                           <td><?php echo $_smarty_tpl->tpl_vars['producto']->value->producto;?>
 </td>
@@ -55,7 +55,7 @@ $_smarty_tpl->tpl_vars['producto']->do_else = false;
 </td>
                           <td><?php echo $_smarty_tpl->tpl_vars['producto']->value->marca;?>
 </td>
-                          <td><?php echo $_smarty_tpl->tpl_vars['producto']->value->temporada_id;?>
+                          <td><?php echo $_smarty_tpl->tpl_vars['producto']->value->temporada;?>
 </td>
                         </tr>
                    <?php
@@ -71,7 +71,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
               <tr>
                 <th>Comentario </th>
                 <th>Puntaje</th>
-                <th>Usuario id</th>
+                <th>Usuario Email</th>
               </tr>
              </thead>
             <tbody id="productos_tabla">

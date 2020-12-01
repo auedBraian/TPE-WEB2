@@ -4,9 +4,7 @@ let prodId= document.getElementById("productoId").value;
 
 async function loadComentarios() {
     try {     
-                             
         let response = await fetch('api/comentarios/'+prodId); //cambiar el numero 7
-       
         if (response.ok) {
             let t = await response.json();
             comentarios=t; 
@@ -14,25 +12,22 @@ async function loadComentarios() {
         }
         else {
             container.innerHTML = "Aun no hay comentarios para mostrar";
-           
         }
     }
     catch (response) {
         container.innerHTML = "Aun no hay comentarios para mostrar";
     };
 }
-
-
  
 function mostrarComentarios() {
     container.innerHTML="";
-    for (let i = 0; i < comentarios.length; i++) {
+    for(let i = 0; i < comentarios.length; i++){
         let tdComentario = document.createElement('td');
         tdComentario.innerText = comentarios[i].comentario;
         let tdValoracion = document.createElement('td');
         tdValoracion.innerText = comentarios[i].valoracion;
         let tdUsuario = document.createElement('td');
-        tdUsuario.innerText = comentarios[i].id_usuario;
+        tdUsuario.innerText = comentarios[i].email;
         let tr = document.createElement('tr');
         container.appendChild(tr);
         tr.appendChild(tdComentario);
@@ -43,7 +38,6 @@ function mostrarComentarios() {
 
 let btninsertarComentario = document.getElementById("btnInsertarComentario");
 btninsertarComentario.addEventListener("click", insertarComentario);
-
 
 async function insertarComentario() {
     event.preventDefault();
